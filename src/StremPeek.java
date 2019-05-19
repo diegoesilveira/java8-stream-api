@@ -1,9 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.OptionalDouble;
 
-public class StreamAverage {
-
+public class StremPeek {
+	
 	public static void main(String[] args) {
 		
 		List<Jogador> jogador = new ArrayList<>();
@@ -18,22 +17,13 @@ public class StreamAverage {
 		jogador.add(new Jogador("Lucas", "Gremio", 50, "Atacante"));
 		jogador.add(new Jogador("Emerson", "Internacional", 12, "Meio Campo"));
 		jogador.add(new Jogador("Santos", "São Paulo", 50, "Atacante"));
+		jogador.add(new Jogador("Di", "Gremio", 1, "Goleiro"));
 
-		double mediaGolsAtacante = jogador.stream()
-			.filter(j -> j.getPosicao().equalsIgnoreCase("atacante"))
-			.mapToInt(Jogador::getGolsMarcados)
-			.average()
-			.getAsDouble();
-			
-				
-			System.out.printf("Média de gols marcados de Atacantes: " + (int)mediaGolsAtacante);
-			
-			double mediaGolsTotal = jogador.stream()
-				.mapToInt(Jogador::getGolsMarcados)
-				.average()
-				.getAsDouble();
-			
-			System.out.println("\nMédia total de gols: " + (int)mediaGolsTotal);
+		jogador.stream()
+			.filter(j -> j.getTimeAtual().equalsIgnoreCase("Gremio"))
+			.map(Jogador::getNome)
+			.peek(System.out::println)
+			;
 	}
 
 }
