@@ -28,7 +28,7 @@ public class StreamArrays {
 			.distinct()
 			.sum();
 			
-		System.out.println("Soma arrays diferentes: " +sumArrays);
+		System.out.println("Soma os valores do array que são diferentes: " +sumArrays);
 		
 		
 
