@@ -20,7 +20,13 @@ public class StreamPeek {
 		jogador.add(new Jogador("Di", "Gremio", 1, "Goleiro"));
 
 		jogador.stream()
-			.filter(j -> j.getTimeAtual().equalsIgnoreCase("Gremio"))
+			.filter(filtraTime -> filtraTime.getTimeAtual().equalsIgnoreCase("Gremio"))
+			.map(Jogador::getNome)
+			.peek(System.out::println)
+			.findFirst();
+		
+		jogador.stream()
+			.filter(filtraGols -> filtraGols.getGolsMarcados() > 50)
 			.map(Jogador::getNome)
 			.peek(System.out::println)
 			.findAny();
