@@ -7,6 +7,12 @@ public class StreamRange {
 		IntStream.range(0, 60) 
 		.forEach(System.out::println);
 		
+		System.out.println("--------------------------------------");
+		
+		IntStream.range(1, 4)
+	    .mapToObj(i -> "a" + i)
+	    .forEach(System.out::println);
+		
 	}
 
 }
