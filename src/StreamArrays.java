@@ -8,9 +8,13 @@ public class StreamArrays {
 			.max()
 			.ifPresent(System.out::println);
 
+		System.out.println("-------------------------------------------------------------------");
+
 		Arrays.stream(new int[] { -1, -10, 0, 1, 2, 3, 4, 5, 10, 11, 50, 51 })
 			.min()
 			.ifPresent(System.out::println);
+
+		System.out.println("-------------------------------------------------------------------");
 
 		double asDouble = Arrays.stream(new int[] {0, 1, 1, 3, 2, 3, 4, 5, 10, 11, 50, 51 })
 			.distinct()
@@ -30,7 +34,11 @@ public class StreamArrays {
 			
 		System.out.println("Soma os valores do array que são diferentes: " +sumArrays);
 		
+		System.out.println("-------------------------------------------------------------------");
 		
+		Arrays.stream(new int[] { 20, 35, -15, 7, 55, 1, -22})
+			.sorted()
+			.forEach(System.out::println);
 
 	}
 
